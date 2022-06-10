@@ -7,4 +7,4 @@ set -e
 
 mkdir -pv "$DATA_DIR"
 
-./src/main.py
+python -m src
