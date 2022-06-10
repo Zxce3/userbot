@@ -1,10 +1,11 @@
-#!/bin/env python3
-
-
 import os
 import sys
-import asyncio
 from pyrogram import Client
+
+
+BOT_NAME    = "userbot"
+APP_VERSION = f"{BOT_NAME} 0.0.1"
+DEV_MODEL   = "Linux"
 
 
 def die(msg):
@@ -24,13 +25,9 @@ if (DATA_DIR == None):
     die("DATA_DIR")
 
 
-app = Client(name="userbot",
+app = Client(name=BOT_NAME,
              api_id=API_ID,
              api_hash=API_HASH,
-             app_version="userbot 0.0.1",
-             device_model="Linux",
+             app_version=APP_VERSION,
+             device_model=DEV_MODEL,
              workdir=DATA_DIR)
-
-
-if __name__ == "__main__":
-    app.run()
