@@ -3,6 +3,11 @@ import sys
 from pyrogram import Client
 
 
+BOT_NAME    = "userbot"
+APP_VERSION = f"{BOT_NAME} 0.0.1"
+DEV_MODEL   = "Linux"
+
+
 def die(msg):
     print(f"{msg} must be provided!", file=sys.stderr)
     sys.exit(1)
@@ -20,9 +25,9 @@ if (DATA_DIR == None):
     die("DATA_DIR")
 
 
-app = Client(name="userbot",
+app = Client(name=BOT_NAME,
              api_id=API_ID,
              api_hash=API_HASH,
-             app_version="userbot 0.0.1",
-             device_model="Linux",
+             app_version=APP_VERSION,
+             device_model=DEV_MODEL,
              workdir=DATA_DIR)
