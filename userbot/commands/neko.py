@@ -24,7 +24,7 @@ async def getNeko(app, msg):
         rep = msg.reply_to_message
 
         if (rep):
-            await msg.reply(img)
+            await msg.reply(img, reply_to_message_id=rep.id)
         else:
             await msg.edit_text(img)
     except:
