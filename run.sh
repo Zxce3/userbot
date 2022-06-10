@@ -7,4 +7,4 @@ set -e
 
 mkdir -pv "$DATA_DIR"
 
-python -m src
+python -m userbot
