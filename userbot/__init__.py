@@ -1,6 +1,6 @@
 import os
 import sys
-from pyrogram import Client
+from pyrogram.client import Client
 
 
 BOT_NAME    = "userbot"
