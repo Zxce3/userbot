@@ -6,13 +6,10 @@ from pyrogram import filters
 @app.on_message(filters.command("info", prefixes=".") & filters.me)
 async def getInfo(app, msg):
     _ = app
-    rep = msg.reply_to_message
 
-    if (rep):
-        _msg = await app.get_users(rep.from_user.id)
-        await msg.reply(f"```{_msg}```")
+    if msg.reply_to_message:
+        await msg.reply(f"```{msg.reply_to_message.from_user}```")
     else:
-        _msg = await app.get_me()
-        await msg.reply(f"```{_msg}```")
+        await msg.reply(f"```{msg.from_user}```")
 
 print("basic.py has been loaded")
