@@ -7,6 +7,7 @@ import requests
 # Usage: neko [-h|ARG]
 @app.on_message(filters.command("neko", prefixes=".") & filters.me)
 async def getNeko(app, msg):
+    _ = app
     url_api = "http://api.nekos.fun:8080/api/"
     cmd = msg.command
 
