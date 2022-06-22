@@ -1,4 +1,4 @@
-from userbot import app
+from userbot import app, commands
 from pyrogram import filters
 import requests
 
@@ -20,7 +20,7 @@ async def getNeko(app, msg):
 
     try:
         res = requests.get(url_api + cmd)
-        if res.status_code == 404:
+        if res.status_code != 200:
             await msg.reply(f"Unknown tag! See: {url_help}")
             return
 
@@ -41,4 +41,6 @@ async def getNeko(app, msg):
     except Exception as e:
         print(e)
 
+
+commands["neko.py"] = "neko"
 print("neko.py has been loaded")

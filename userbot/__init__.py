@@ -31,3 +31,5 @@ app = Client(name=BOT_NAME,
              app_version=APP_VERSION,
              device_model=DEV_MODEL,
              workdir=DATA_DIR)
+
+commands = {}
