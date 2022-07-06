@@ -1,4 +1,5 @@
-from time import perf_counter, sleep
+import asyncio
+from time import perf_counter
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -9,7 +10,7 @@ from userbot.utils.misc import modules_help, prefix
 @Client.on_message(filters.command(["ping", "p"], prefix) & filters.me)
 async def ping(_, message: Message):
     await message.edit("⚡️")
-    sleep(3)
+    await asyncio.sleep(3)
     start = perf_counter()
     await message.edit("Wait..")
     end = perf_counter()
