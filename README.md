@@ -1,6 +1,12 @@
 # userbot
 
-```
+This userbot was created with the aim of learning and is still in the process of being further developed, if you want to contribute see the [#contribute](#contributing) section
+
+## Instalation
+
+after cloning this repo. run the following command below:
+
+```bash
 python3 -m venv venv
 
 source venv/bin/activate
@@ -13,3 +19,17 @@ cp example.env .env
 
 ```
 
+## Thanks to
+
+- [Rlapz](https://github.com/rlapz/)
+- [Dragon-Userbot](https://github.com/Dragon-Userbot/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[GPL-2.0 license](LICENSE)
