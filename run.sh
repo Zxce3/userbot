@@ -5,6 +5,6 @@ set -e
 . ./.env
 . ./venv/bin/activate
 
-mkdir -pv "$DATA_DIR"
+# mkdir -pv "$DATA_DIR"
 
-python -m userbot
+reload python3 -m userbot

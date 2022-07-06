@@ -1,6 +1,7 @@
 from userbot import app, commands
 from pyrogram import filters
 import json
+from userbot.utils.misc import modules_help, prefix
 
 
 # Usage: info
@@ -22,5 +23,4 @@ async def getCommands(app, msg):
     await msg.reply(f"```{res}```")
 
 
-commands["basic.py"] = [ "info", "commands" ]
-print("basic.py has been loaded")
+modules_help["info"] = {"info": "get json info"}

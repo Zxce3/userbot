@@ -7,3 +7,7 @@ PySocks==1.7.1
 requests==2.27.1
 TgCrypto==1.2.3
 urllib3==1.26.9
+reload==0.9
+pymongo[srv]==4.1.1
+dnspython==2.2.1
+Pillow==9.2.0
