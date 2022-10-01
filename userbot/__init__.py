@@ -16,31 +16,31 @@ def die(msg):
     sys.exit(1)
 
 API_ID = os.getenv("API_ID")
-if (API_ID is None):
+if API_ID is None:
     die("API_ID")
 
 API_HASH = os.getenv("API_HASH")
-if (API_HASH is None):
+if API_HASH is None:
     die("API_HASH")
 
 DATA_DIR = os.getenv("DATA_DIR")
-if (DATA_DIR is None):
+if DATA_DIR is None:
     die("DATA_DIR")
 
 SESSION_STRING = os.getenv("SESSION_STRING")
-if (SESSION_STRING is None):
+if SESSION_STRING is None:
     die("SESSION_STRING")
 
 DB_NAME = os.getenv("DB_NAME")
-if (DB_NAME is None ):
+if DB_NAME is None:
     die("DB_NAME")
 
 DB_URL = os.getenv("DB_URL")
-if (DB_URL is None ):
+if DB_URL is None:
     pass
 
 DB_TYPE = os.getenv("DB_TYPE")
-if (DB_TYPE is None ):
+if DB_TYPE is None:
     die("DB_TYPE")
 
 app = Client(name=BOT_NAME,
