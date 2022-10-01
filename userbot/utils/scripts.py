@@ -27,14 +27,13 @@ def format_exc(e: Exception, hint: str = None):
             f"**Telegram API error!**\n"
             f"`[{e.CODE} {e.ID or e.NAME}] - {e.MESSAGE}`"
         )
+    if hint:
+        hint_text = f"\n\n**Hint: {hint}**"
     else:
-        if hint:
-            hint_text = f"\n\n**Hint: {hint}**"
-        else:
-            hint_text = ""
-        return (
-            f"**Error!**\n" f"`{e.__class__.__name__}: {e}`" + hint_text
-        )
+        hint_text = ""
+    return (
+        f"**Error!**\n" f"`{e.__class__.__name__}: {e}`" + hint_text
+    )
 
 
 def with_reply(func):
