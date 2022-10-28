@@ -1,8 +1,7 @@
-from userbot import app, commands
+from userbot import app
+from userbot.utils.misc import modules_help, prefix
 from pyrogram import filters
 import requests
-import logging
-from userbot.utils.misc import modules_help, prefix
 
 @app.on_message(filters.command("repo", prefix) & filters.me)
 async def search_repo(app, msg):

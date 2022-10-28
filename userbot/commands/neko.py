@@ -85,4 +85,3 @@ modules_help['neko'] = {
     'neko <category>': 'Get neko from nekos.life api/v2/img',
     'nekolist': 'List of categories'
     }
-    

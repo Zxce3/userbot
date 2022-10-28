@@ -1,8 +1,7 @@
-from userbot import app, commands
-from pyrogram import filters
-import json
-import asyncio
+from userbot import app
 from userbot.utils.misc import modules_help, prefix
+from pyrogram import filters
+import asyncio
 
 # exec os command and send output to message
 @app.on_message(filters.command("exec", prefix) & filters.me)

@@ -1,6 +1,5 @@
-from userbot import app, commands
+from userbot import app
 from pyrogram import filters
-import json
 from userbot.utils.misc import modules_help, prefix
 
 # get group id and send it to message

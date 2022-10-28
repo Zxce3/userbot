@@ -1,9 +1,8 @@
 # get neko from nekos.fun api/v2/img
-from userbot import app, commands
+from userbot import app
+from userbot.utils.misc import modules_help, prefix
 from pyrogram import filters
 import requests
-import logging
-from userbot.utils.misc import modules_help, prefix
 
 data = [
     'smug',
@@ -68,4 +67,3 @@ modules_help['neko2'] = {
     'neko2 <category>': 'Get neko from nekos.life api/v2/img',
     'neko2list': 'List of categories'
     }
-    
