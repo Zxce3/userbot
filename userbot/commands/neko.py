@@ -5,9 +5,38 @@ import logging
 from userbot.utils.misc import modules_help, prefix
 
 
-sfw = "**Kiss** : `Kissing images`\n**Lick** : `Lick`\n**Hug** : `Give someone a hug`\n**Baka** : `B-Baka!!!`\n**cry** : `:,(`\n**Poke** : `Senpai notice meeeee!`\n**Smug** : `What to put here?`\n**Slap** : `Ope`\n**Tickle** : `;)`\n**Pat** : `Pat someone`\n**Laugh** : `HaHaHaHa`\n**Feed** : `I want foooooodddddd`\n**Cuddle** : `well in this context.... An intesnse hug`\n"
-"**Cuddle** : `well in this context.... An intesnse hug`\n"
-nsfw ="**4K** : `Real 4K images (mostly 4k but all uhd)`\n**Ass** : `Reall Asses`\n**Blowjob/BJ** : `d-do I need to explain > ///< (anime)`\n**Boobs** : `Real breasts`\n**Cum** : `Baby gravy!`\n**Feet** : `👀`\n**hentai** : `random hentai`\n**wallpapers** : `99% sfw`\n**spank** : `NSFW for butts`\n**gasm** : `aheago`\n**lesbian** : `girls rule!`\n**lewd** : `**WARNING** this folder is unsorted I would not use it untill weve filtered out loli/shota content`\n**pussy** : `u-ummm > ///<`\n"
+dsfw = [
+"**Kiss** : `Kissing images`",
+"**Lick** : `Lick`",
+"**Hug** : `Give someone a hug`",
+"**Baka** : `B-Baka!!!`",
+"**cry** : `:,(`",
+"**Poke** : `Senpai notice meeeee!`",
+"**Smug** : `What to put here?`",
+"**Slap** : `Ope`",
+"**Tickle** : `;)`",
+"**Pat** : `Pat someone`",
+"**Laugh** : `HaHaHaHa`",
+"**Feed** : `I want foooooodddddd`",
+"**Cuddle** : `well in this context.... An intesnse hug`"
+]
+
+dnsfw = [
+"**4K** : `Real 4K images (mostly 4k but all uhd)`",
+"**Ass** : `Reall Asses`",
+"**Blowjob/BJ** : `d-do I need to explain > ///< (anime)`",
+"**Boobs** : `Real breasts`",
+"**Cum** : `Baby gravy!`",
+"**Feet** : `👀`",
+"**hentai** : `random hentai`",
+"**wallpapers** : `99% sfw`",
+"**spank** : `NSFW for butts`",
+"**gasm** : `aheago`",
+"**lesbian** : `girls rule!`",
+"**lewd** : `⚠️WARNING this folder is unsorted I would not use it untill weve filtered out loli/shota content`",
+"**pussy** : `u-ummm > ///<`"
+]
+
 # Usage: neko [-h|ARG]
 @app.on_message(filters.command("neko", prefix) & filters.me)
 async def getNeko(app, msg):
@@ -21,13 +50,6 @@ async def getNeko(app, msg):
         if cmd == "-h":
             await msg.edit(f"See: `{prefix}help neko`")
             return
-        if cmd == "sfw":
-            await msg.edit(f"**SFW (Safe for work) list** \n\n{sfw}")
-            return
-        if cmd == "nsfw":
-            await msg.edit(f"**NSFW (NOT safe for work) list** \n\n{nsfw}")
-            return
-
     try:
         res = requests.get(url_api + cmd)
         if res.status_code != 200:
@@ -52,9 +74,15 @@ async def getNeko(app, msg):
         # print(e)
         logging.warning(e)
 
-
-modules_help["neko"] = {
-    "neko [neko name]": "Get neko",
-    "neko sfw": "to see list sfw",
-    "neko nsfw": "to see list nsfw"
+# list of categories from data dsfw and dnsfw for nekolist
+@app.on_message(filters.command("nekolist", prefix) & filters.me)
+async def getNekoList(app, msg):
+    sfw = "\n- ".join(dsfw)
+    nsfw = "\n- ".join(dnsfw)
+    await msg.edit(f"**SFW (Safe for work) list** \n\n- {sfw}\n\n**NSFW (NOT safe for work) list** \n\n- {nsfw}")
+# Help module
+modules_help['neko'] = {
+    'neko <category>': 'Get neko from nekos.life api/v2/img',
+    'nekolist': 'List of categories'
     }
+    
