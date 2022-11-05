@@ -4,7 +4,7 @@ from pyrogram import filters
 import asyncio
 
 # exec os command and send output to message
-@app.on_message(filters.command("exec", prefix) & filters.me)
+@app.on_message(filters.command(["exec",">"], prefix) & filters.me)
 async def execCommand(app, msg):
     if len(msg.command) < 2:
         await msg.edit("Usage: `exec [command]`")
