@@ -1,6 +1,7 @@
 # userbot [UNMAINTANABLE]
 
-This userbot was created with the aim of learning and is still in the process of being further developed, if you want to contribute see the [#contribute](#contributing) section
+This userbot was created with the aim of learning and not developed again(maybe someday), 
+if you want to contribute see the [#contribute](#contributing) section
 
 ## Instalation
 
